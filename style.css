@@ -1,0 +1,58 @@
+*{padding: 0; margin: 0; box-sizing: border-box; font-family: serif;}
+.animation{
+    background: rgb(50, 207, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.d-flex{display: inline-flex;}
+
+.static{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+.d-flex .dynamic{
+    margin-left: 10px; 
+    height: 36px;
+    line-height: 35px; 
+    overflow: hidden;
+}
+.dynamic li{
+    list-style: none;
+    font-size: 30px;
+    font-weight: 700;
+    top: 0;
+    position: relative;
+    animation: top-down 5s steps(4) infinite;
+}
+.dynamic li span{
+    font-size: 20px;
+    color: #fff;
+    padding: 6px 0;
+}
+
+
+
+.dynamic li span{position: relative;}
+
+.dynamic li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid crimson;
+    animation: anim 2s steps(12) infinite;
+    background: rgb(50, 207, 207);
+}
+@keyframes anim{
+    100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+    }
+}
+@keyframes top-down{
+    100%{top: -160px;}
+}
